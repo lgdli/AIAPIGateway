@@ -1,0 +1,137 @@
+version: '3.8'
+
+services:
+  # Nginx 反向代理（HTTPS）
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: aiapi-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx/logs:/var/log/nginx
+    depends_on:
+      - aiapi-gateway
+    networks:
+      - aiapi-network
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # AI API Gateway 主服务
+  aiapi-gateway:
+    image: xjtu/aiapi-gateway:latest
+    container_name: aiapi-gateway
+    restart: unless-stopped
+    expose:
+      - "3000"
+    volumes:
+      - ./data:/data
+      - ./logs:/data/logs
+    environment:
+      - SESSION_SECRET=${SESSION_SECRET:-your-secret-key-change-this}
+      - SQL_DSN=aiapi:${MYSQL_PASSWORD:-aiapi_password}@tcp(mysql:3306)/aiapi?charset=utf8mb4&parseTime=True&loc=Local
+      - REDIS_URL=redis://redis:6379
+      - PORT=3000
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - aiapi-network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # MySQL 数据库
+  mysql:
+    image: mysql:8.0
+    container_name: aiapi-mysql
+    restart: unless-stopped
+    expose:
+      - "3306"
+    ports:
+      - "127.0.0.1:3306:3306"  # 仅本地访问
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-root_password_change_this}
+      - MYSQL_DATABASE=aiapi
+      - MYSQL_USER=aiapi
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-aiapi_password}
+      - TZ=Asia/Shanghai
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql/conf.d:/etc/mysql/conf.d
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    networks:
+      - aiapi-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=mysql_native_password
+
+  # Redis 缓存
+  redis:
+    image: redis:7-alpine
+    container_name: aiapi-redis
+    restart: unless-stopped
+    expose:
+      - "6379"
+    ports:
+      - "127.0.0.1:6379:6379"  # 仅本地访问
+    volumes:
+      - redis-data:/data
+    networks:
+      - aiapi-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    command: redis-server --appendonly yes
+
+  # phpMyAdmin（可选 - 数据库管理工具）
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: aiapi-phpmyadmin
+    restart: unless-stopped
+    expose:
+      - "80"
+    ports:
+      - "127.0.0.1:8080:80"  # 仅本地访问
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD:-root_password_change_this}
+      - UPLOAD_LIMIT=100M
+    depends_on:
+      - mysql
+    networks:
+      - aiapi-network
+
+# 数据卷
+volumes:
+  mysql-data:
+    driver: local
+  redis-data:
+    driver: local
+
+# 网络
+networks:
+  aiapi-network:
+    driver: bridge
