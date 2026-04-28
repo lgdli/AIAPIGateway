@@ -1,0 +1,10 @@
+node_modules/
+*.db
+*.db-journal
+logs/
+.env
+.DS_Store
+.cache/
+dist/
+build/
+*.exe
