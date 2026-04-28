@@ -1,0 +1,128 @@
+<h2>字段映射配置界面</h2>
+<p class="subtitle">如何配置外部字段到本地字段的映射关系?</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>表格编辑模式(推荐)</h3>
+      <p>类似Excel的表格,每行一个映射,直观易用。适合批量配置。</p>
+      <div class="mockup">
+        <div class="mockup-header">字段映射 - 教职工数据库</div>
+        <div class="mockup-body" style="padding:16px;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;">
+            <tr style="background:#f5f5f5;">
+              <th style="padding:8px;text-align:left;border:1px solid #ddd;">外部字段</th>
+              <th style="padding:8px;text-align:left;border:1px solid #ddd;">本地字段</th>
+              <th style="padding:8px;text-align:left;border:1px solid #ddd;">映射方式</th>
+              <th style="padding:8px;text-align:left;border:1px solid #ddd;">映射规则</th>
+              <th style="padding:8px;text-align:left;border:1px solid #ddd;">操作</th>
+            </tr>
+            <tr>
+              <td style="padding:8px;border:1px solid #ddd;"><input type="text" value="employee_id" style="width:100px;"/></td>
+              <td style="padding:8px;border:1px solid #ddd;">
+                <select style="width:100px;"><option selected>username</option><option>email</option><option>display_name</option></select>
+              </td>
+              <td style="padding:8px;border:1px solid #ddd;">
+                <select><option selected>直接映射</option><option>值映射</option></select>
+              </td>
+              <td style="padding:8px;border:1px solid #ddd;">-</td>
+              <td style="padding:8px;border:1px solid #ddd;"><a href="#">删除</a></td>
+            </tr>
+            <tr>
+              <td style="padding:8px;border:1px solid #ddd;"><input type="text" value="email" style="width:100px;"/></td>
+              <td style="padding:8px;border:1px solid #ddd;">
+                <select style="width:100px;"><option>username</option><option selected>email</option><option>display_name</option></select>
+              </td>
+              <td style="padding:8px;border:1px solid #ddd;">
+                <select><option selected>直接映射</option><option>值映射</option></select>
+              </td>
+              <td style="padding:8px;border:1px solid #ddd;">-</td>
+              <td style="padding:8px;border:1px solid #ddd;"><a href="#">删除</a></td>
+            </tr>
+            <tr>
+              <td style="padding:8px;border:1px solid #ddd;"><input type="text" value="user_type" style="width:100px;"/></td>
+              <td style="padding:8px;border:1px solid #ddd;">
+                <select style="width:100px;"><option>username</option><option>email</option><option selected>role</option></select>
+              </td>
+              <td style="padding:8px;border:1px solid #ddd;">
+                <select><option>直接映射</option><option selected>值映射</option></select>
+              </td>
+              <td style="padding:8px;border:1px solid #ddd;">
+                <button class="mock-button" style="font-size:12px;">编辑映射</button>
+              </td>
+              <td style="padding:8px;border:1px solid #ddd;"><a href="#">删除</a></td>
+            </tr>
+          </table>
+          <div style="margin-top:12px;">
+            <button class="mock-button">+ 添加映射</button>
+            <button class="mock-button" style="margin-left:8px;background:#1890ff;color:white;">保存</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>表单卡片模式</h3>
+      <p>每个映射一个独立卡片,展开配置详情。适合映射项较少、需要详细说明的场景。</p>
+      <div class="mockup">
+        <div class="mockup-header">字段映射 - 教职工数据库</div>
+        <div class="mockup-body" style="padding:16px;">
+          <div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong>employee_id → username</strong>
+              <span style="color:#666;font-size:13px;">直接映射</span>
+            </div>
+            <p style="margin:8px 0 0;color:#666;font-size:13px;">外部员工的工号直接映射为登录用户名</p>
+          </div>
+          <div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong>user_type → role</strong>
+              <span style="color:#666;font-size:13px;">值映射</span>
+            </div>
+            <p style="margin:8px 0 0;color:#666;font-size:13px;">teacher → 1, admin → 10, student → 1</p>
+            <button class="mock-button" style="margin-top:8px;font-size:12px;">编辑</button>
+          </div>
+          <button class="mock-button">+ 添加映射</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>向导模式</h3>
+      <p>分步骤引导配置: 选择外部表 → 预览字段 → 逐一映射 → 确认。适合首次配置。</p>
+      <div class="mockup">
+        <div class="mockup-header">字段映射向导</div>
+        <div class="mockup-body" style="padding:16px;">
+          <div style="margin-bottom:16px;">
+            <span style="background:#1890ff;color:white;padding:4px 12px;border-radius:4px;">1.选择表</span>
+            <span style="margin:0 8px;">→</span>
+            <span style="background:#1890ff;color:white;padding:4px 12px;border-radius:4px;">2.映射字段</span>
+            <span style="margin:0 8px;">→</span>
+            <span style="background:#ddd;padding:4px 12px;border-radius:4px;">3.确认</span>
+          </div>
+          <h4 style="margin:0 0 12px;">步骤2: 配置字段映射</h4>
+          <p style="margin:0 0 12px;color:#666;font-size:13px;">外部表 <strong>employees</strong> 包含以下字段:</p>
+          <div style="background:#f5f5f5;padding:12px;border-radius:4px;">
+            <p style="margin:4px 0;"><strong>employee_id</strong> - 映射到: <select style="width:100px;"><option selected>username</option></select></p>
+            <p style="margin:4px 0;"><strong>email</strong> - 映射到: <select style="width:100px;"><option selected>email</option></select></p>
+            <p style="margin:4px 0;"><strong>name</strong> - 映射到: <select style="width:100px;"><option selected>display_name</option></select></p>
+            <p style="margin:4px 0;"><strong>user_type</strong> - 映射到: <select style="width:100px;"><option selected>role</option></select> <a href="#">配置值映射</a></p>
+          </div>
+          <div style="margin-top:16px;">
+            <button class="mock-button">上一步</button>
+            <button class="mock-button" style="margin-left:8px;background:#1890ff;color:white;">下一步</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p style="color:#666;font-size:14px;margin-top:24px;">提示: 字段映射需要支持直接映射和值映射两种方式,后者用于role/status等枚举字段转换。</p>

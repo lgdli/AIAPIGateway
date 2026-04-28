@@ -1,0 +1,83 @@
+<h2>外部用户源管理页面布局</h2>
+<p class="subtitle">选择数据源列表页的整体布局风格</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>简化列表(推荐)</h3>
+      <p>单个表格展示所有数据源,点击行展开详情和操作。类似现有TaskSetting页面风格,简洁高效。</p>
+      <div class="mockup">
+        <div class="mockup-header">外部用户源列表</div>
+        <div class="mockup-body">
+          <table style="width:100%;border-collapse:collapse;">
+            <tr style="background:#f5f5f5;border-bottom:1px solid #ddd;">
+              <th style="padding:8px;text-align:left;">名称</th>
+              <th style="padding:8px;text-align:left;">类型</th>
+              <th style="padding:8px;text-align:left;">状态</th>
+              <th style="padding:8px;text-align:left;">最后同步</th>
+              <th style="padding:8px;text-align:left;">操作</th>
+            </tr>
+            <tr style="border-bottom:1px solid #eee;">
+              <td style="padding:8px;">教职工数据库</td>
+              <td style="padding:8px;">MySQL</td>
+              <td style="padding:8px;"><span style="color:green;">已启用</span></td>
+              <td style="padding:8px;">5分钟前</td>
+              <td style="padding:8px;">[编辑] [同步] [日志]</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>卡片视图</h3>
+      <p>每个数据源一个独立卡片,关键信息一目了然,操作按钮更显眼。</p>
+      <div class="mockup">
+        <div class="mockup-header">外部用户源</div>
+        <div class="mockup-body" style="display:flex;gap:16px;flex-wrap:wrap;">
+          <div style="border:1px solid #ddd;border-radius:8px;padding:16px;width:280px;">
+            <h4 style="margin:0 0 8px;">教职工数据库</h4>
+            <p style="margin:4px 0;color:#666;font-size:14px;">MySQL - 192.168.1.100</p>
+            <p style="margin:4px 0;color:green;font-size:14px;">已启用</p>
+            <div style="margin-top:12px;">
+              <button class="mock-button" style="margin-right:8px;">编辑</button>
+              <button class="mock-button" style="margin-right:8px;">同步</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>主从布局</h3>
+      <p>左侧列表+右侧详情,适合需要频繁切换查看详情的场景。</p>
+      <div class="mockup">
+        <div class="mockup-header">外部用户源</div>
+        <div class="mockup-body" style="display:flex;height:250px;">
+          <div style="width:180px;border-right:1px solid #ddd;padding:8px;">
+            <div style="padding:8px;background:#e6f7ff;border-radius:4px;">教职工数据库</div>
+            <div style="padding:8px;">学生系统</div>
+          </div>
+          <div style="flex:1;padding:16px;">
+            <h3 style="margin:0 0 16px;">教职工数据库</h3>
+            <p><strong>类型:</strong> MySQL</p>
+            <p><strong>主机:</strong> 192.168.1.100</p>
+            <div style="margin-top:16px;">
+              <button class="mock-button" style="margin-right:8px;">编辑配置</button>
+              <button class="mock-button" style="margin-right:8px;">立即同步</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p style="color:#666;font-size:14px;margin-top:24px;">提示: 现有系统使用Semi Design UI组件库,布局应与现有页面风格保持一致。</p>

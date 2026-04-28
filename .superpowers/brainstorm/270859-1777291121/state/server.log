@@ -1,0 +1,3 @@
+{"type":"server-started","port":54347,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:54347","screen_dir":"/home/xjtu/myprojects/AIGateway/.superpowers/brainstorm/270859-1777291121/content","state_dir":"/home/xjtu/myprojects/AIGateway/.superpowers/brainstorm/270859-1777291121/state"}
+{"type":"screen-added","file":"/home/xjtu/myprojects/AIGateway/.superpowers/brainstorm/270859-1777291121/content/layout-overview.html"}
+{"type":"server-stopped","reason":"idle timeout"}
