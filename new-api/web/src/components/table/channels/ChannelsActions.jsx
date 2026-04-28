@@ -16,6 +16,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 For commercial licensing, please contact support@quantumnous.com
 */
+import ExportChannelsModal from './modals/ExportChannelsModal';
+import ImportChannelsModal from './modals/ImportChannelsModal';
 
 import React from 'react';
 import {
@@ -57,6 +59,11 @@ const ChannelsActions = ({
   pageSize,
   setActivePage,
   t,
+  selectedChannels,
+  setShowExportModal,
+  showExportModal,
+  setShowImportModal,
+  showImportModal,
 }) => {
   return (
     <div className='flex flex-col gap-2'>
@@ -88,6 +95,23 @@ const ChannelsActions = ({
             className='w-full md:w-auto'
           >
             {t('批量设置标签')}
+          </Button>
+          <Button
+            size='small'
+            type='primary'
+            className='w-full md:w-auto'
+            onClick={() => setShowExportModal(true)}
+          >
+            {t('导出渠道')}
+          </Button>
+
+          <Button
+            size='small'
+            type='tertiary'
+            className='w-full md:w-auto'
+            onClick={() => setShowImportModal(true)}
+          >
+            {t('导入渠道')}
           </Button>
 
           <Dropdown
@@ -322,6 +346,33 @@ const ChannelsActions = ({
           </div>
         </div>
       </div>
+      <ExportChannelsModal
+        visible={showExportModal}
+        onCancel={() => setShowExportModal(false)}
+        selectedChannels={selectedChannels || []}
+        onSuccess={(data, method) => {
+          if (method === 'display') {
+            Modal.info({
+              title: t('导出结果'),
+              content: (
+                <pre style={{ maxHeight: 400, overflow: 'auto', fontSize: 12 }}>
+                  {data.content}
+                </pre>
+              ),
+              width: 800,
+            });
+          }
+        }}
+        t={t}
+      />
+      <ImportChannelsModal
+        visible={showImportModal}
+        onCancel={() => setShowImportModal(false)}
+        onSuccess={() => {
+          loadChannels(activePage, pageSize, idSort, enableTagMode);
+        }}
+        t={t}
+      />
     </div>
   );
 };

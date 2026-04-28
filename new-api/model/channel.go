@@ -1006,3 +1006,21 @@ func CountChannelsGroupByType() (map[int64]int64, error) {
 	}
 	return counts, nil
 }
+
+func GetChannelByName(name string) (*Channel, error) {
+	var channel Channel
+	err := DB.Where("name = ?", name).First(&channel).Error
+	if err != nil {
+		return nil, err
+	}
+	return &channel, nil
+}
+
+func GetChannelByKey(key string) (*Channel, error) {
+	var channel Channel
+	err := DB.Where("key = ?", key).First(&channel).Error
+	if err != nil {
+		return nil, err
+	}
+	return &channel, nil
+}
