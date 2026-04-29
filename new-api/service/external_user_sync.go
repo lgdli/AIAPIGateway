@@ -14,6 +14,10 @@ import (
 	_ "github.com/lib/pq"
 )
 
+func cleanHost(host string) string {
+	return strings.TrimSpace(host)
+}
+
 func ConnectExternalDB(source *model.ExternalUserSource) (*sql.DB, error) {
 	common.SysLog(fmt.Sprintf("[ExternalDB] Source ID: %d, Password field length: %d, Password value: '%s'", source.Id, len(source.Password), source.Password))
 	
@@ -27,17 +31,19 @@ func ConnectExternalDB(source *model.ExternalUserSource) (*sql.DB, error) {
 
 	var dsn string
 	var driver string
+	host := cleanHost(source.Host)
 
 	switch source.DbType {
 	case "mysql":
 		driver = "mysql"
-		dsn = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=true",
-			source.Username, password, source.Host, source.Port, source.Database)
+		// For IP addresses, use IP directly without DNS lookup
+		dsn = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=true&timeout=10s",
+			source.Username, password, host, source.Port, source.Database)
 		common.SysLog(fmt.Sprintf("[ExternalDB] MySQL DSN: %s", dsn))
 	case "postgresql":
 		driver = "postgres"
-		dsn = fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-			source.Host, source.Port, source.Username, password, source.Database)
+		dsn = fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable&connect_timeout=10",
+			host, source.Port, source.Username, password, source.Database)
 		common.SysLog(fmt.Sprintf("[ExternalDB] PostgreSQL DSN: %s", dsn))
 	default:
 		return nil, fmt.Errorf("unsupported database type: %s", source.DbType)
