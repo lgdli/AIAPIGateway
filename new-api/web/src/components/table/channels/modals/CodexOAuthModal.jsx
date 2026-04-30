@@ -121,8 +121,7 @@ const CodexOAuthModal = ({ visible, onCancel, onSuccess }) => {
             {t('取消')}
           </Button>
           <Button
-            theme='solid'
-            type='primary'
+            theme='solid' type='primary'
             onClick={completeOAuth}
             loading={loading}
           >
@@ -140,7 +139,7 @@ const CodexOAuthModal = ({ visible, onCancel, onSuccess }) => {
         />
 
         <Space wrap>
-          <Button type='primary' onClick={startOAuth} loading={loading}>
+          <Button theme='solid' type='primary' onClick={startOAuth} loading={loading}>
             {t('打开授权页面')}
           </Button>
           <Button

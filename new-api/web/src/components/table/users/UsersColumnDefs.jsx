@@ -250,7 +250,7 @@ const renderOperations = (
     <Space>
       {record.status === 1 ? (
         <Button
-          type='danger'
+          theme='solid' type='danger'
           size='small'
           onClick={() => showEnableDisableModal(record, 'disable')}
         >
@@ -258,6 +258,7 @@ const renderOperations = (
         </Button>
       ) : (
         <Button
+          theme='solid' type='primary'
           size='small'
           onClick={() => showEnableDisableModal(record, 'enable')}
         >
@@ -275,7 +276,7 @@ const renderOperations = (
         {t('编辑')}
       </Button>
       <Button
-        type='warning'
+        theme='solid' type='warning'
         size='small'
         onClick={() => showPromoteModal(record)}
       >

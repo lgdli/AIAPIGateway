@@ -188,7 +188,7 @@ const renderOperations = (
     <Space wrap>
       {record.status === 1 ? (
         <Button
-          type='danger'
+          theme='solid' type='danger'
           size='small'
           onClick={() => manageModel(record.id, 'disable', record)}
         >
@@ -215,7 +215,7 @@ const renderOperations = (
       </Button>
 
       <Button
-        type='danger'
+        theme='solid' type='danger'
         size='small'
         onClick={() => {
           Modal.confirm({

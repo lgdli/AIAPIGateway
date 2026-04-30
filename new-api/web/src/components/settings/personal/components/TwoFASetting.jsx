@@ -236,8 +236,7 @@ const TwoFASetting = ({ t }) => {
 
           <Divider margin={12} />
           <Button
-            type='primary'
-            theme='solid'
+            theme='solid' type='primary'
             icon={<IconCopy />}
             onClick={onCopy}
             className='!rounded-lg !bg-slate-600 hover:!bg-slate-700 w-full'
@@ -263,8 +262,7 @@ const TwoFASetting = ({ t }) => {
         )}
         {currentStep < 2 ? (
           <Button
-            type='primary'
-            theme='solid'
+            theme='solid' type='primary'
             onClick={() => setCurrentStep(currentStep + 1)}
             className='!rounded-lg !bg-slate-600 hover:!bg-slate-700'
           >
@@ -272,8 +270,7 @@ const TwoFASetting = ({ t }) => {
           </Button>
         ) : (
           <Button
-            type='primary'
-            theme='solid'
+            theme='solid' type='primary'
             loading={loading}
             onClick={() => {
               if (!verificationCode) {
@@ -306,8 +303,7 @@ const TwoFASetting = ({ t }) => {
           {t('取消')}
         </Button>
         <Button
-          type='danger'
-          theme='solid'
+          theme='solid' type='danger'
           loading={loading}
           disabled={!confirmDisable || !verificationCode}
           onClick={handleDisable2FA}
@@ -324,8 +320,7 @@ const TwoFASetting = ({ t }) => {
     if (backupCodes.length > 0) {
       return (
         <Button
-          type='primary'
-          theme='solid'
+          theme='solid' type='primary'
           onClick={() => {
             setBackupModalVisible(false);
             setVerificationCode('');
@@ -351,8 +346,7 @@ const TwoFASetting = ({ t }) => {
           {t('取消')}
         </Button>
         <Button
-          type='primary'
-          theme='solid'
+          theme='solid' type='primary'
           loading={loading}
           disabled={!verificationCode}
           onClick={handleRegenerateBackupCodes}
@@ -414,8 +408,7 @@ const TwoFASetting = ({ t }) => {
           <div className='flex flex-col space-y-2 w-full sm:w-auto'>
             {!status.enabled ? (
               <Button
-                type='primary'
-                theme='solid'
+                theme='solid' type='primary'
                 size='default'
                 onClick={handleSetup2FA}
                 loading={loading}
@@ -427,8 +420,7 @@ const TwoFASetting = ({ t }) => {
             ) : (
               <div className='flex flex-col space-y-2'>
                 <Button
-                  type='danger'
-                  theme='solid'
+                  theme='solid' type='danger'
                   size='default'
                   onClick={() => setDisableModalVisible(true)}
                   className='!rounded-lg !bg-slate-500 hover:!bg-slate-600'
@@ -437,8 +429,7 @@ const TwoFASetting = ({ t }) => {
                   {t('禁用两步验证')}
                 </Button>
                 <Button
-                  type='primary'
-                  theme='solid'
+                  theme='solid' type='primary'
                   size='default'
                   onClick={() => setBackupModalVisible(true)}
                   className='!rounded-lg'

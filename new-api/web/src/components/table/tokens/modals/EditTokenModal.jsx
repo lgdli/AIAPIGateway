@@ -336,9 +336,7 @@ const EditTokenModal = (props) => {
               {t('提交')}
             </Button>
             <Button
-              theme='light'
-              className='!rounded-lg'
-              type='primary'
+              theme='solid' type='primary'
               onClick={handleCancel}
               icon={<IconClose />}
             >

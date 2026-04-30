@@ -282,8 +282,7 @@ const MessageContent = ({
             </Button>
             <Button
               size='small'
-              type='warning'
-              theme='solid'
+              theme='solid' type='warning'
               icon={<Check size={14} />}
               onClick={onEditSave}
               disabled={!editValue || editValue.trim() === ''}

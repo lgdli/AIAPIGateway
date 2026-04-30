@@ -309,7 +309,7 @@ export default function SettingsPaymentGatewayCreem(props) {
             <div className='flex justify-between items-center mb-4'>
               <Text strong>{t('产品配置')}</Text>
               <Button
-                type='primary'
+                theme='solid' type='primary'
                 icon={<Plus size={16} />}
                 onClick={() => openProductModal()}
               >

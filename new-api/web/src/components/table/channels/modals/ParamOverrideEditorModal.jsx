@@ -1941,7 +1941,7 @@ const ParamOverrideEditorModal = ({ visible, value, onSave, onCancel }) => {
                 }
                 style={{ width: 260 }}
               />
-              <Button onClick={fillTemplateFromLibrary}>{t('填充模板')}</Button>
+              <Button theme='solid' type='primary' onClick={fillTemplateFromLibrary}>{t('填充模板')}</Button>
               <Button type='tertiary' onClick={appendTemplateFromLibrary}>
                 {t('追加模板')}
               </Button>

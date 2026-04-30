@@ -196,7 +196,7 @@ export default function ModelPricingEditor({
             {allowDeleteModel ? (
               <Button
                 size='small'
-                type='danger'
+                theme='solid' type='danger'
                 icon={<IconDelete />}
                 onClick={() => deleteModel(record.name)}
               />
@@ -241,7 +241,7 @@ export default function ModelPricingEditor({
             </Button>
           ) : null}
           <Button
-            type='primary'
+            theme='solid' type='primary'
             icon={<IconSave />}
             loading={loading}
             onClick={handleSubmit}

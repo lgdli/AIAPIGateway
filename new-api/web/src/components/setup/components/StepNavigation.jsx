@@ -47,7 +47,7 @@ const StepNavigation = ({
 
       {/* 下一步按钮 */}
       {currentStep < steps.length - 1 && (
-        <Button type='primary' onClick={next} className='!rounded-lg'>
+        <Button theme='solid' type='primary' onClick={next} className='!rounded-lg'>
           {t('下一步')}
         </Button>
       )}
@@ -55,7 +55,7 @@ const StepNavigation = ({
       {/* 完成按钮 */}
       {currentStep === steps.length - 1 && (
         <Button
-          type='primary'
+          theme='solid' type='primary'
           onClick={onSubmit}
           loading={loading}
           className='!rounded-lg'

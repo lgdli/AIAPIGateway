@@ -44,7 +44,7 @@ const ImportChannelsModal = ({ visible, onCancel, onSuccess, t }) => {
     <Modal title={t('导入渠道')} visible={visible} onCancel={onCancel} footer={
       <Space>
         <Button type="tertiary" onClick={onCancel}>{t('关闭')}</Button>
-        <Button type="primary" loading={loading} onClick={handleImport} disabled={!file}>{t('导入')}</Button>
+        <Button theme="solid" type="primary" loading={loading} onClick={handleImport} disabled={!file}>{t('导入')}</Button>
       </Space>
     } width={800}>
       <Form>

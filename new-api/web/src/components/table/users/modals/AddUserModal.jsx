@@ -92,6 +92,7 @@ const AddUserModal = (props) => {
             <Space>
               <Button
                 theme='solid'
+                type='primary'
                 onClick={() => formApiRef.current?.submitForm()}
                 icon={<IconSave />}
                 loading={loading}

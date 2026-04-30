@@ -219,8 +219,7 @@ const SecureVerificationModal = ({
                     {t('取消')}
                   </Button>
                   <Button
-                    theme='solid'
-                    type='primary'
+                    theme='solid' type='primary'
                     loading={loading}
                     disabled={!code.trim() || loading}
                     onClick={() => onVerify(method, code)}
@@ -301,8 +300,7 @@ const SecureVerificationModal = ({
                     {t('取消')}
                   </Button>
                   <Button
-                    theme='solid'
-                    type='primary'
+                    theme='solid' type='primary'
                     loading={loading}
                     disabled={loading}
                     onClick={() => onVerify(method)}

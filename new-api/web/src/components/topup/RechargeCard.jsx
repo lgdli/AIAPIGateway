@@ -587,8 +587,7 @@ const RechargeCard = ({
             suffix={
               <div className='flex items-center gap-2'>
                 <Button
-                  type='primary'
-                  theme='solid'
+                  theme='solid' type='primary'
                   onClick={topUp}
                   loading={isSubmitting}
                 >

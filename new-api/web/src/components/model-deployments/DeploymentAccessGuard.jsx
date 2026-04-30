@@ -388,7 +388,7 @@ const DeploymentAccessGuard = ({
               style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}
             >
               <Button
-                type='primary'
+                theme='solid' type='primary'
                 icon={<Settings size={18} />}
                 onClick={handleGoToSettings}
               >

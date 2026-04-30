@@ -24,7 +24,7 @@ const SubscriptionsActions = ({ openCreate, t }) => {
   return (
     <div className='flex gap-2 w-full md:w-auto'>
       <Button
-        type='primary'
+        theme='solid' type='primary'
         className='w-full md:w-auto'
         onClick={openCreate}
         size='small'

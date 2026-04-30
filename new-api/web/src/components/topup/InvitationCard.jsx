@@ -77,8 +77,7 @@ const InvitationCard = ({
                     {t('收益统计')}
                   </Text>
                   <Button
-                    type='primary'
-                    theme='solid'
+                    theme='solid' type='primary'
                     size='small'
                     disabled={
                       !userState?.user?.aff_quota ||
@@ -181,8 +180,7 @@ const InvitationCard = ({
             prefix={t('邀请链接')}
             suffix={
               <Button
-                type='primary'
-                theme='solid'
+                theme='solid' type='primary'
                 onClick={handleAffLinkClick}
                 icon={<Copy size={14} />}
                 className='!rounded-lg'

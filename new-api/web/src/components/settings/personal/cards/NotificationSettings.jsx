@@ -367,7 +367,7 @@ const NotificationSettings = ({
                 {t('重置为默认')}
               </Button>
               <Button
-                type='primary'
+                theme='solid' type='primary'
                 onClick={saveSidebarSettings}
                 loading={sidebarLoading}
                 className='!rounded-lg'
@@ -377,7 +377,7 @@ const NotificationSettings = ({
             </>
           ) : (
             // 其他标签页的通用保存按钮
-            <Button type='primary' onClick={handleSubmit}>
+            <Button theme='solid' type='primary' onClick={handleSubmit}>
               {t('保存设置')}
             </Button>
           )}

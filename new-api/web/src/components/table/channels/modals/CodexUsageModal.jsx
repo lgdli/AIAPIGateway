@@ -505,7 +505,7 @@ export const openCodexUsageModal = ({ t, record, payload, onCopy }) => {
     ),
     footer: (
       <div className='flex justify-end gap-2'>
-        <Button type='primary' theme='solid' onClick={() => Modal.destroyAll()}>
+        <Button theme='solid' type='primary' onClick={() => Modal.destroyAll()}>
           {tt('关闭')}
         </Button>
       </div>

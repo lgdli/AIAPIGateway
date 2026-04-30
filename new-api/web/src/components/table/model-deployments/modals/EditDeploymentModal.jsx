@@ -224,8 +224,7 @@ const EditDeploymentModal = ({
             {t('取消')}
           </Button>
           <Button
-            theme='solid'
-            type='primary'
+            theme='solid' type='primary'
             loading={loading}
             onClick={() => formRef.current?.submitForm()}
           >

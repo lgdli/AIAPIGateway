@@ -148,9 +148,7 @@ const EditPrefillGroupModal = ({
               {t('提交')}
             </Button>
             <Button
-              theme='light'
-              className='!rounded-lg'
-              type='primary'
+              theme='solid' type='primary'
               onClick={onClose}
               icon={<IconClose />}
             >

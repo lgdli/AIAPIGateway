@@ -99,7 +99,7 @@ const MissingModelsModal = ({ visible, onClose, onConfigureModel, t }) => {
       width: 120,
       render: (text, record) => (
         <Button
-          type='primary'
+          theme='solid' type='primary'
           size='small'
           onClick={() => onConfigureModel(record.model)}
         >

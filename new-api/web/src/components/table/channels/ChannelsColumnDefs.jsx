@@ -799,7 +799,7 @@ export const getChannelsColumns = ({
 
               {record.status === 1 ? (
                 <Button
-                  type='danger'
+                  theme='solid' type='danger'
                   size='small'
                   onClick={() => manageChannel(record.id, 'disable', record)}
                 >

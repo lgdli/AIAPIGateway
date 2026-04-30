@@ -270,8 +270,7 @@ const CheckinCalendar = ({ t, status, turnstileEnabled, turnstileSiteKey }) => {
           </div>
         </div>
         <Button
-          type='primary'
-          theme='solid'
+          theme='solid' type='primary'
           icon={<Gift size={16} />}
           onClick={() => doCheckin()}
           loading={checkinLoading || !initialLoaded}

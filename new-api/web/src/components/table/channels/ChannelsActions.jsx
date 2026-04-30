@@ -74,7 +74,7 @@ const ChannelsActions = ({
           <Button
             size='small'
             disabled={!enableBatchDelete}
-            type='danger'
+            theme='solid' type='danger'
             className='w-full md:w-auto'
             onClick={() => {
               Modal.confirm({
@@ -98,7 +98,7 @@ const ChannelsActions = ({
           </Button>
           <Button
             size='small'
-            type='primary'
+            theme='solid' type='primary'
             className='w-full md:w-auto'
             onClick={() => setShowExportModal(true)}
           >
@@ -199,7 +199,7 @@ const ChannelsActions = ({
                 <Dropdown.Item>
                   <Button
                     size='small'
-                    type='primary'
+                    theme='solid' type='primary'
                     className='w-full'
                     loading={applyAllUpstreamUpdatesLoading}
                     disabled={applyAllUpstreamUpdatesLoading}
@@ -219,7 +219,7 @@ const ChannelsActions = ({
                 <Dropdown.Item>
                   <Button
                     size='small'
-                    type='danger'
+                    theme='solid' type='danger'
                     className='w-full'
                     onClick={() => {
                       Modal.confirm({

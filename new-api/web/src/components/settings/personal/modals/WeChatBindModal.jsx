@@ -63,8 +63,7 @@ const WeChatBindModal = ({
           prefix={<IconKey />}
         />
         <Button
-          type='primary'
-          theme='solid'
+          theme='solid' type='primary'
           size='large'
           onClick={bindWeChat}
           className='!rounded-lg w-full !bg-slate-600 hover:!bg-slate-700'

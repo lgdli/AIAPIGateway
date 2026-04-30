@@ -123,8 +123,7 @@ const RiskAcknowledgementModal = React.memo(function RiskAcknowledgementModal({
         <Space>
           <Button type="tertiary" onClick={onCancel}>{cancelText}</Button>
           <Button
-            theme='solid'
-            type='danger'
+            theme='solid' type='danger'
             disabled={!canConfirm}
             onClick={onConfirm}
           >

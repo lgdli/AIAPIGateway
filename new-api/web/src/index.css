@@ -1,5 +1,5 @@
 /* ==================== Tailwind CSS 配置 ==================== */
-@layer tailwind-base, semi, tailwind-components, tailwind-utils;
+@layer tailwind-base, tailwind-components, tailwind-utils, semi;
 
 @layer tailwind-base {
   @tailwind base;
@@ -72,7 +72,7 @@ code {
 /* ==================== 导航和侧边栏样式 ==================== */
 .semi-navigation-item {
   margin-bottom: 4px !important;
-  padding: 4px 12px !important;
+  padding: 6px 16px !important;
 }
 
 .semi-navigation-sub-title {
@@ -1032,6 +1032,46 @@ html.dark .with-pastel-balls::before {
   margin-left: 0 !important;
 }
 
-.semi-modal-footer .semi-button + .semi-button {
-  margin-left: 12px !important;
+/* ==================== Fix button font and size ==================== */
+.semi-button {
+  font-weight: 600 !important;
+}
+
+.semi-button-size-small {
+  font-size: 13px !important;
+  padding: 6px 16px !important;
+  line-height: 1.5 !important;
+  height: auto !important;
+}
+
+.semi-button-size-small .semi-button-content {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+/* ==================== Button Background Fix ==================== */
+.semi-button-primary.semi-button-solid,
+.semi-button-primary.semi-button-solid:hover,
+.semi-button-primary.semi-button-solid:focus {
+  background-color: var(--semi-color-primary) !important;
+}
+
+.semi-button-danger.semi-button-solid,
+.semi-button-danger.semi-button-solid:hover,
+.semi-button-danger.semi-button-solid:focus {
+  background-color: var(--semi-color-danger) !important;
+}
+
+.semi-button-warning.semi-button-solid,
+.semi-button-warning.semi-button-solid:hover,
+.semi-button-warning.semi-button-solid:focus {
+  background-color: var(--semi-color-warning) !important;
+}
+
+/* ==================== Button width auto-fit ==================== */
+.semi-button {
+  width: auto !important;
+  min-width: fit-content !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }

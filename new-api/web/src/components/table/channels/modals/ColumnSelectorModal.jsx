@@ -75,11 +75,11 @@ const ColumnSelectorModal = ({
       onCancel={() => setShowColumnSelector(false)}
       footer={
         <div className='flex justify-end'>
-          <Button onClick={() => initDefaultColumns()}>{t('重置')}</Button>
-          <Button onClick={() => setShowColumnSelector(false)}>
+          <Button type='tertiary' onClick={() => initDefaultColumns()}>{t('重置')}</Button>
+          <Button type='tertiary' onClick={() => setShowColumnSelector(false)}>
             {t('取消')}
           </Button>
-          <Button onClick={() => setShowColumnSelector(false)}>
+          <Button theme='solid' type='primary' onClick={() => setShowColumnSelector(false)}>
             {t('确定')}
           </Button>
         </div>

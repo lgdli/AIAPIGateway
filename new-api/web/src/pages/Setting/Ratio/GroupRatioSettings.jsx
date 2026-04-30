@@ -749,7 +749,7 @@ export default function GroupRatioSettings(props) {
         </div>
         {editMode === 'visual' ? renderVisualMode() : renderManualMode()}
       </div>
-      <Button type='primary' size='default' onClick={onSubmit}>
+      <Button theme='solid' type='primary' size='default' onClick={onSubmit}>
         {t('保存分组相关设置')}
       </Button>
       {renderGuide()}

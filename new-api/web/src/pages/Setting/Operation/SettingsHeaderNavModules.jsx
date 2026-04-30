@@ -338,7 +338,7 @@ export default function SettingsHeaderNavModules(props) {
           </Button>
           <Button
             size='default'
-            type='primary'
+            theme='solid' type='primary'
             onClick={onSubmit}
             loading={loading}
             style={{

@@ -206,7 +206,7 @@ const PrefillGroupManagement = ({ visible, onClose }) => {
             title={t('确定删除此组？')}
             onConfirm={() => deleteGroup(record.id)}
           >
-            <Button size='small' type='danger'>
+            <Button size='small' theme='solid' type='danger'>
               {t('删除')}
             </Button>
           </Popconfirm>
@@ -257,8 +257,7 @@ const PrefillGroupManagement = ({ visible, onClose }) => {
               </div>
               <div className='flex justify-end mb-4'>
                 <Button
-                  type='primary'
-                  theme='solid'
+                  theme='solid' type='primary'
                   size='small'
                   icon={<IconPlus />}
                   onClick={() => handleEdit()}

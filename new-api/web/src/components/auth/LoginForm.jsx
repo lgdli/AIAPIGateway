@@ -647,8 +647,7 @@ const LoginForm = () => {
                 </Divider>
 
                 <Button
-                  theme='solid'
-                  type='primary'
+                  theme='solid' type='primary'
                   className='w-full h-12 flex items-center justify-center bg-black text-white !rounded-full hover:bg-gray-800 transition-colors'
                   icon={<IconMail size='large' />}
                   onClick={handleEmailLoginClick}

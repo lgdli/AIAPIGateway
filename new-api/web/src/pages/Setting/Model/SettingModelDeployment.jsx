@@ -307,7 +307,6 @@ export default function SettingModelDeployment(props) {
                     <Button
                       icon={<ArrowUpRight size={16} />}
                       type='primary'
-                      theme='solid'
                       style={{ width: '100%' }}
                       onClick={() =>
                         window.open('https://ai.io.net/ai/api-keys', '_blank')
@@ -321,7 +320,7 @@ export default function SettingModelDeployment(props) {
             </Card>
 
             <Row>
-              <Button size='default' type='primary' onClick={onSubmit}>
+              <Button size='default' theme='solid' type='primary' onClick={onSubmit}>
                 {t('保存设置')}
               </Button>
             </Row>

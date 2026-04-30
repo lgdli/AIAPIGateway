@@ -247,7 +247,6 @@ const ConfigManager = ({
         <Button
           icon={<Download size={12} />}
           size='small'
-          theme='solid'
           type='primary'
           onClick={handleExport}
           className='!rounded-lg flex-1 !text-xs !h-7'

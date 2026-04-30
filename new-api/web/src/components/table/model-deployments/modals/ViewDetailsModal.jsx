@@ -254,7 +254,6 @@ const ViewDetailsModal = ({ visible, onCancel, deployment, t }) => {
                       <div className='flex items-center gap-2'>
                         <Badge
                           count={details.total_gpus}
-                          theme='solid'
                           type='primary'
                         >
                           <FaServer className='text-purple-500' />

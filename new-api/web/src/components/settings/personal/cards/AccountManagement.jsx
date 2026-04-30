@@ -65,8 +65,7 @@ const AccountManagement = ({
             </div>
           </div>
           <Button
-            type='primary'
-            theme='solid'
+            theme='solid' type='primary'
             onClick={() => setShowChangePasswordModal(true)}
             className='!bg-slate-600 hover:!bg-slate-700 w-full sm:w-auto'
             icon={<IconLock />}

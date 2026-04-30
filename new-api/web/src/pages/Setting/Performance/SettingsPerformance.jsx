@@ -390,7 +390,7 @@ export default function SettingsPerformance(props) {
               </Col>
             </Row>
             <Row>
-              <Button type='primary' size='default' onClick={onSubmit}>
+              <Button theme='solid' type='primary' size='default' onClick={onSubmit}>
                 {t('保存性能设置')}
               </Button>
             </Row>
@@ -488,7 +488,7 @@ export default function SettingsPerformance(props) {
                   }
                   onConfirm={cleanupLogFiles}
                 >
-                  <Button type='danger' loading={logCleanupLoading}>
+                  <Button theme='solid' type='danger' loading={logCleanupLoading}>
                     {t('清理日志文件')}
                   </Button>
                 </Popconfirm>
@@ -516,7 +516,7 @@ export default function SettingsPerformance(props) {
                   content={t('这将删除超过 10 分钟未使用的临时缓存文件')}
                   onConfirm={clearDiskCache}
                 >
-                  <Button type='warning'>{t('清理不活跃缓存')}</Button>
+                  <Button theme='solid' type='warning'>{t('清理不活跃缓存')}</Button>
                 </Popconfirm>
                 <Button onClick={resetStats}>{t('重置统计')}</Button>
                 <Button onClick={forceGC}>{t('执行 GC')}</Button>

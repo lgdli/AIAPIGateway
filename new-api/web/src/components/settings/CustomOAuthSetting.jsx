@@ -659,8 +659,8 @@ const CustomOAuthSetting = ({ serverAddress }) => {
                   {formValues.enabled ? t('已启用') : t('已禁用')}
                 </Tag>
               </Space>
-              <Button onClick={closeModal}>{t('取消')}</Button>
-              <Button type='primary' onClick={handleSubmit}>
+              <Button type='tertiary' onClick={closeModal}>{t('取消')}</Button>
+              <Button theme='solid' type='primary' onClick={handleSubmit}>
                 {t('保存')}
               </Button>
             </div>

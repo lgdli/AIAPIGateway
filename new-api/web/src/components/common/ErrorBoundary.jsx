@@ -35,8 +35,7 @@ class ErrorBoundary extends React.Component {
             description={t('页面渲染出错，请刷新页面重试')}
           />
           <Button
-            theme='solid'
-            type='primary'
+            theme='solid' type='primary'
             style={{ marginTop: 16 }}
             onClick={() => window.location.reload()}
           >

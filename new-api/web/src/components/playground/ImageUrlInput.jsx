@@ -79,7 +79,6 @@ const ImageUrlInput = ({
           <Button
             icon={<Plus size={14} />}
             size='small'
-            theme='solid'
             type='primary'
             onClick={handleAddImageUrl}
             className='!rounded-full !w-4 !h-4 !p-0 !min-w-0'

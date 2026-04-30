@@ -49,7 +49,6 @@ const FloatingButtons = ({
             background: 'linear-gradient(to right, #8b5cf6, #6366f1)',
           }}
           onClick={onToggleSettings}
-          theme='solid'
           type='primary'
           className='lg:hidden'
         />

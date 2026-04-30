@@ -1031,7 +1031,7 @@ export default function SettingsChannelAffinity(props) {
               >
                 {t('刷新缓存统计')}
               </Button>
-              <Button type='danger' onClick={confirmClearAllCache}>
+              <Button theme='solid' type='danger' onClick={confirmClearAllCache}>
                 {t('清空全部缓存')}
               </Button>
             </Space>
@@ -1238,7 +1238,7 @@ export default function SettingsChannelAffinity(props) {
                       <Space>
                         <Button
                           size='small'
-                          type='primary'
+                          theme='solid' type='primary'
                           icon={<IconCode />}
                           onClick={() => setParamTemplateEditorVisible(true)}
                         >

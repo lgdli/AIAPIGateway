@@ -99,7 +99,7 @@ const TwoFAVerification = ({ onSuccess, onBack, isModal = false }) => {
 
           <Button
             htmlType='submit'
-            type='primary'
+            theme='solid' type='primary'
             loading={loading}
             block
             size='large'
@@ -182,7 +182,7 @@ const TwoFAVerification = ({ onSuccess, onBack, isModal = false }) => {
 
           <Button
             htmlType='submit'
-            type='primary'
+            theme='solid' type='primary'
             loading={loading}
             block
             size='large'

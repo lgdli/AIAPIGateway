@@ -231,8 +231,7 @@ const SubscriptionPurchaseModal = ({
                     disabled={purchaseLimitReached}
                   />
                   <Button
-                    theme='solid'
-                    type='primary'
+                    theme='solid' type='primary'
                     onClick={onPayEpay}
                     loading={paying}
                     disabled={!selectedEpayMethod || purchaseLimitReached}

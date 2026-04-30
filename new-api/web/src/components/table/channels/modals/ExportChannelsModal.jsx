@@ -56,7 +56,7 @@ const ExportChannelsModal = ({ visible, onCancel, selectedChannels, onSuccess, t
       footer={
         <Space>
           <Button type="tertiary" onClick={onCancel}>{t('取消')}</Button>
-          <Button type="primary" loading={loading} onClick={handleExport}>
+          <Button theme="solid" type="primary" loading={loading} onClick={handleExport}>
             {t('导出')}
           </Button>
         </Space>

@@ -239,7 +239,7 @@ export default function SettingsLog(props) {
                   </Text>
                   <Button
                     size='default'
-                    type='danger'
+                    theme='solid' type='danger'
                     onClick={onCleanHistoryLog}
                   >
                     {t('清除历史日志')}
@@ -249,7 +249,7 @@ export default function SettingsLog(props) {
             </Row>
 
             <Row>
-              <Button type='primary' size='default' onClick={onSubmit}>
+              <Button theme='solid' type='primary' size='default' onClick={onSubmit}>
                 {t('保存日志设置')}
               </Button>
             </Row>

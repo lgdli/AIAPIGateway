@@ -567,8 +567,7 @@ const OllamaModelModal = ({
             </Col>
             <Col span={8}>
               <Button
-                theme='solid'
-                type='primary'
+                theme='solid' type='primary'
                 onClick={pullModel}
                 loading={pullLoading}
                 disabled={!pullModelName.trim()}
@@ -681,8 +680,7 @@ const OllamaModelModal = ({
                 {t('清空')}
               </Button>
               <Button
-                theme='solid'
-                type='primary'
+                theme='solid' type='primary'
                 icon={<IconPlus />}
                 onClick={handleApplyAllModels}
                 disabled={selectedModelIds.length === 0}

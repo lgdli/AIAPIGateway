@@ -362,7 +362,7 @@ const renderOperations = (
 
       {record.status === 1 ? (
         <Button
-          type='danger'
+          theme='solid' type='danger'
           size='small'
           onClick={async () => {
             await manageToken(record.id, 'disable', record);
@@ -395,7 +395,7 @@ const renderOperations = (
       </Button>
 
       <Button
-        type='danger'
+        theme='solid' type='danger'
         size='small'
         onClick={() => {
           Modal.confirm({

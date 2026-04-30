@@ -392,6 +392,7 @@ const EditTagModal = (props) => {
           <Space>
             <Button
               theme='solid'
+              type='primary'
               onClick={() => formApiRef.current?.submitForm()}
               loading={loading}
               icon={<IconSave />}
@@ -506,7 +507,7 @@ const EditTagModal = (props) => {
                     suffix={
                       <Button
                         size='small'
-                        type='primary'
+                        theme='solid' type='primary'
                         onClick={addCustomModels}
                       >
                         {t('填入')}

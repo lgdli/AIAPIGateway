@@ -264,9 +264,7 @@ const EditModelModal = (props) => {
               {t('提交')}
             </Button>
             <Button
-              theme='light'
-              className='!rounded-lg'
-              type='primary'
+              theme='solid' type='primary'
               onClick={handleCancel}
               icon={<X size={16} />}
             >
@@ -398,7 +396,7 @@ const EditModelModal = (props) => {
                               <Button
                                 key={group.id}
                                 size='small'
-                                type='primary'
+                                theme='solid' type='primary'
                                 onClick={() => {
                                   if (formApiRef.current) {
                                     const currentTags =
@@ -483,7 +481,7 @@ const EditModelModal = (props) => {
                               <Button
                                 key={group.id}
                                 size='small'
-                                type='primary'
+                                theme='solid' type='primary'
                                 onClick={() => {
                                   try {
                                     const current =

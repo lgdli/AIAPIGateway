@@ -46,10 +46,15 @@ const CopyTokensModal = ({
       onCancel={onCancel}
       footer={
         <Space>
-          <Button type='tertiary' onClick={handleCopyWithName}>
+          <Button type='tertiary' onClick={onCancel}>
+            {t('取消')}
+          </Button>
+          <Button theme='solid' type='primary' onClick={handleCopyKeyOnly}>
+            {t('仅密钥')}
+          </Button>
+          <Button theme='solid' type='primary' onClick={handleCopyWithName}>
             {t('名称+密钥')}
           </Button>
-          <Button onClick={handleCopyKeyOnly}>{t('仅密钥')}</Button>
         </Space>
       }
     >

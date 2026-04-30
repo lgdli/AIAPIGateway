@@ -420,7 +420,7 @@ export default function SettingsSidebarModulesAdmin(props) {
           </Button>
           <Button
             size='default'
-            type='primary'
+            theme='solid' type='primary'
             onClick={onSubmit}
             loading={loading}
             style={{

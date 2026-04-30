@@ -163,7 +163,7 @@ export default function SettingGrokModel(props) {
           </Row>
 
           <Row>
-            <Button type='primary' size='default' onClick={onSubmit}>
+            <Button theme='solid' type='primary' size='default' onClick={onSubmit}>
               {t('保存')}
             </Button>
           </Row>

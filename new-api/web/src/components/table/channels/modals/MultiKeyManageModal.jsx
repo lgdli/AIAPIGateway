@@ -415,7 +415,7 @@ const MultiKeyManageModal = ({ visible, onCancel, channel, onRefresh }) => {
         <Space>
           {record.status === 1 ? (
             <Button
-              type='danger'
+              theme='solid' type='danger'
               size='small'
               loading={operationLoading[`disable_${record.index}`]}
               onClick={() => handleDisableKey(record.index)}
@@ -424,7 +424,7 @@ const MultiKeyManageModal = ({ visible, onCancel, channel, onRefresh }) => {
             </Button>
           ) : (
             <Button
-              type='primary'
+              theme='solid' type='primary'
               size='small'
               loading={operationLoading[`enable_${record.index}`]}
               onClick={() => handleEnableKey(record.index)}
@@ -440,7 +440,7 @@ const MultiKeyManageModal = ({ visible, onCancel, channel, onRefresh }) => {
             position={'topRight'}
           >
             <Button
-              type='danger'
+              theme='solid' type='danger'
               size='small'
               loading={operationLoading[`delete_${record.index}`]}
             >
@@ -647,7 +647,7 @@ const MultiKeyManageModal = ({ visible, onCancel, channel, onRefresh }) => {
                           >
                             <Button
                               size='small'
-                              type='primary'
+                              theme='solid' type='primary'
                               loading={operationLoading.enable_all}
                             >
                               {t('启用全部')}
@@ -663,7 +663,7 @@ const MultiKeyManageModal = ({ visible, onCancel, channel, onRefresh }) => {
                           >
                             <Button
                               size='small'
-                              type='danger'
+                              theme='solid' type='danger'
                               loading={operationLoading.disable_all}
                             >
                               {t('禁用全部')}
@@ -681,7 +681,7 @@ const MultiKeyManageModal = ({ visible, onCancel, channel, onRefresh }) => {
                         >
                           <Button
                             size='small'
-                            type='warning'
+                            theme='solid' type='warning'
                             loading={operationLoading.delete_disabled}
                           >
                             {t('删除自动禁用密钥')}

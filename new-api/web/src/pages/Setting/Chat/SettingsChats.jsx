@@ -355,7 +355,7 @@ export default function SettingsChats(props) {
       render: (_, record) => (
         <Space>
           <Button
-            type='primary'
+            theme='solid' type='primary'
             icon={<IconEdit />}
             size='small'
             onClick={() => handleEditConfig(record)}
@@ -363,7 +363,7 @@ export default function SettingsChats(props) {
             {t('编辑')}
           </Button>
           <Button
-            type='danger'
+            theme='solid' type='danger'
             icon={<IconDelete />}
             size='small'
             onClick={() => handleDeleteConfig(record.id)}
@@ -416,7 +416,7 @@ export default function SettingsChats(props) {
             <div>
               <Space style={{ marginBottom: 16 }}>
                 <Button
-                  type='primary'
+                  theme='solid' type='primary'
                   icon={<IconPlus />}
                   onClick={handleAddConfig}
                 >
@@ -446,8 +446,7 @@ export default function SettingsChats(props) {
                   </Button>
                 </Dropdown>
                 <Button
-                  type='primary'
-                  theme='solid'
+                  theme='solid' type='primary'
                   icon={<IconSaveStroked />}
                   onClick={onSubmit}
                 >
@@ -515,7 +514,7 @@ export default function SettingsChats(props) {
         {editMode === 'json' && (
           <Space>
             <Button
-              type='primary'
+              theme='solid' type='primary'
               icon={<IconSaveStroked />}
               onClick={onSubmit}
             >

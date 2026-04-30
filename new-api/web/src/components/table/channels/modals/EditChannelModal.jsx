@@ -1477,8 +1477,7 @@ const EditChannelModal = (props) => {
               {t('直接提交')}
             </Button>
             <Button
-              type='primary'
-              theme='solid'
+              theme='solid' type='primary'
               onClick={() => {
                 modal.destroy();
                 resolve('add');
@@ -2295,7 +2294,7 @@ const EditChannelModal = (props) => {
                       <Space>
                         <Button
                           size='small'
-                          type='primary'
+                          theme='solid' type='primary'
                           icon={<IconCode size={14} />}
                           onClick={() => setParamOverrideEditorVisible(true)}
                         >
@@ -2530,8 +2529,7 @@ const EditChannelModal = (props) => {
                         <div className='flex gap-1'>
                           <Button
                             size='small'
-                            theme='solid'
-                            type='primary'
+                            theme='solid' type='primary'
                             onClick={() => applyClipboardConfig(clipboardConfig)}
                           >
                             {t('自动填入')}
@@ -3484,7 +3482,7 @@ const EditChannelModal = (props) => {
                         <Space>
                           <Button
                             size='small'
-                            type='primary'
+                            theme='solid' type='primary'
                             onClick={() =>
                               handleInputChange('models', basicModels)
                             }
@@ -3552,7 +3550,7 @@ const EditChannelModal = (props) => {
                     suffix={
                       <Button
                         size='small'
-                        type='primary'
+                        theme='solid' type='primary'
                         onClick={addCustomModels}
                       >
                         {t('填入')}
@@ -3809,7 +3807,7 @@ const EditChannelModal = (props) => {
         visible={keyDisplayState.showModal}
         onCancel={resetKeyDisplayState}
         footer={
-          <Button type='primary' onClick={resetKeyDisplayState}>
+          <Button theme='solid' type='primary' onClick={resetKeyDisplayState}>
             {t('完成')}
           </Button>
         }

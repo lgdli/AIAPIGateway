@@ -198,7 +198,7 @@ export default function SettingsDrawing(props) {
               </Col>
             </Row>
             <Row>
-              <Button type='primary' size='default' onClick={onSubmit}>
+              <Button theme='solid' type='primary' size='default' onClick={onSubmit}>
                 {t('保存绘图设置')}
               </Button>
             </Row>

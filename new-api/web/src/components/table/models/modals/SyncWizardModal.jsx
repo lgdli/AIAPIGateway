@@ -48,7 +48,7 @@ const SyncWizardModal = ({ visible, onClose, onConfirm, loading, t }) => {
           <Button onClick={onClose}>{t('取消')}</Button>
           {step === 0 && (
             <Button
-              type='primary'
+              theme='solid' type='primary'
               onClick={() => setStep(1)}
               disabled={option !== 'official'}
             >
@@ -57,8 +57,7 @@ const SyncWizardModal = ({ visible, onClose, onConfirm, loading, t }) => {
           )}
           {step === 1 && (
             <Button
-              type='primary'
-              theme='solid'
+              theme='solid' type='primary'
               loading={loading}
               onClick={async () => {
                 await onConfirm?.({ option, locale });

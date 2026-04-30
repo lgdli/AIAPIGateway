@@ -158,15 +158,14 @@ function TokensPage() {
           </div>
           <Space>
             <Button
-              theme='solid'
-              type='primary'
+              theme='solid' type='primary'
               onClick={handlePrefillToFluent}
             >
               {t('一键填充到 FluentRead')}
             </Button>
             {!key && (
               <Button
-                type='warning'
+                theme='solid' type='warning'
                 onClick={() => {
                   localStorage.setItem(SUPPRESS_KEY, '1');
                   Notification.close('fluent-detected');

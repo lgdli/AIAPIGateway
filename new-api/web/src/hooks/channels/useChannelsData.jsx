@@ -835,8 +835,7 @@ export const useChannelsData = () => {
                 {t('复制版本号')}
               </Button>
               <Button
-                type='primary'
-                theme='solid'
+                theme='solid' type='primary'
                 onClick={() => Modal.destroyAll()}
               >
                 {t('关闭')}

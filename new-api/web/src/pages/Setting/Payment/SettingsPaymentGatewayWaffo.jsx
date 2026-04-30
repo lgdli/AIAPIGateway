@@ -340,7 +340,7 @@ export default function SettingsPaymentGatewayWaffo(props) {
           </Button>
           <Button
             size='small'
-            type='danger'
+            theme='solid' type='danger'
             onClick={() => handleDeletePayMethod(index)}
           >
             {t('删除')}
@@ -645,7 +645,7 @@ export default function SettingsPaymentGatewayWaffo(props) {
               {payMethodForm.icon && (
                 <Button
                   size='small'
-                  type='danger'
+                  theme='solid' type='danger'
                   onClick={() =>
                     setPayMethodForm((prev) => ({ ...prev, icon: '' }))
                   }

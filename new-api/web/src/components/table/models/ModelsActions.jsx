@@ -106,7 +106,7 @@ const ModelsActions = ({
     <>
       <div className='flex flex-wrap gap-2 w-full md:w-auto order-2 md:order-1'>
         <Button
-          type='primary'
+          theme='solid' type='primary'
           className='flex-1 md:flex-initial'
           onClick={() => {
             setEditingModel({

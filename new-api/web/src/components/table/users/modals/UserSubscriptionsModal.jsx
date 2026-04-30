@@ -384,8 +384,7 @@ const UserSubscriptionsModal = ({ visible, onCancel, user, t, onSuccess }) => {
               style={{ minWidth: isMobile ? undefined : 300, flex: 1 }}
             />
             <Button
-              type='primary'
-              theme='solid'
+              theme='solid' type='primary'
               icon={<IconPlusCircle />}
               loading={creating}
               onClick={createSubscription}

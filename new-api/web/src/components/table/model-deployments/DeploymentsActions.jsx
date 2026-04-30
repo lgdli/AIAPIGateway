@@ -57,7 +57,7 @@ const DeploymentsActions = ({
   return (
     <div className='flex flex-wrap gap-2 w-full md:w-auto order-2 md:order-1'>
       <Button
-        type='primary'
+        theme='solid' type='primary'
         className='flex-1 md:flex-initial'
         onClick={handleAddDeployment}
         size='small'
@@ -76,7 +76,7 @@ const DeploymentsActions = ({
             onConfirm={handleBatchDelete}
           >
             <Button
-              type='danger'
+              theme='solid' type='danger'
               className='flex-1 md:flex-initial'
               disabled={selectedKeys.length === 0}
               size='small'

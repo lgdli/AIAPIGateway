@@ -336,7 +336,7 @@ const OtherSetting = () => {
                       {statusState?.status?.version || t('未知')}
                     </Text>
                     <Button
-                      type='primary'
+                      theme='solid' type='primary'
                       onClick={checkUpdate}
                       loading={loadingInput['CheckUpdate']}
                     >
@@ -372,7 +372,7 @@ const OtherSetting = () => {
                 style={{ fontFamily: 'JetBrains Mono, Consolas' }}
                 autosize={{ minRows: 6, maxRows: 12 }}
               />
-              <Button onClick={submitNotice} loading={loadingInput['Notice']}>
+              <Button theme='solid' type='primary' onClick={submitNotice} loading={loadingInput['Notice']}>
                 {t('设置公告')}
               </Button>
               <Form.TextArea
@@ -441,7 +441,7 @@ const OtherSetting = () => {
                 field={'Logo'}
                 onChange={handleInputChange}
               />
-              <Button onClick={submitLogo} loading={loadingInput['Logo']}>
+              <Button theme='solid' type='primary' onClick={submitLogo} loading={loadingInput['Logo']}>
                 {t('设置 Logo')}
               </Button>
               <Form.TextArea
@@ -455,6 +455,7 @@ const OtherSetting = () => {
                 autosize={{ minRows: 6, maxRows: 12 }}
               />
               <Button
+                theme='solid' type='primary'
                 onClick={() => submitOption('HomePageContent')}
                 loading={loadingInput['HomePageContent']}
               >
@@ -470,7 +471,7 @@ const OtherSetting = () => {
                 style={{ fontFamily: 'JetBrains Mono, Consolas' }}
                 autosize={{ minRows: 6, maxRows: 12 }}
               />
-              <Button onClick={submitAbout} loading={loadingInput['About']}>
+              <Button theme='solid' type='primary' onClick={submitAbout} loading={loadingInput['About']}>
                 {t('设置关于')}
               </Button>
               {/*  */}
@@ -491,7 +492,7 @@ const OtherSetting = () => {
                 field={'Footer'}
                 onChange={handleInputChange}
               />
-              <Button onClick={submitFooter} loading={loadingInput['Footer']}>
+              <Button theme='solid' type='primary' onClick={submitFooter} loading={loadingInput['Footer']}>
                 {t('设置页脚')}
               </Button>
             </Form.Section>
@@ -505,7 +506,7 @@ const OtherSetting = () => {
         footer={[
           <Button
             key='details'
-            type='primary'
+            theme='solid' type='primary'
             onClick={() => {
               setShowUpdateModal(false);
               openGitHubRelease();

@@ -729,7 +729,7 @@ const SystemSetting = () => {
                       />
                     </Col>
                   </Row>
-                  <Button onClick={submitServerAddress}>
+                  <Button theme='solid' type='primary' onClick={submitServerAddress}>
                     {t('更新服务器地址')}
                   </Button>
                 </Form.Section>
@@ -780,7 +780,7 @@ const SystemSetting = () => {
                   >
                     {t('允许 HTTP 协议图片请求（适用于自部署代理）')}
                   </Form.Checkbox>
-                  <Button onClick={submitWorker}>{t('更新Worker设置')}</Button>
+                  <Button theme='solid' type='primary' onClick={submitWorker}>{t('更新Worker设置')}</Button>
                 </Form.Section>
               </Card>
 
@@ -1273,8 +1273,7 @@ const SystemSetting = () => {
                     style={{ marginTop: 16 }}
                     suffix={
                       <Button
-                        theme='solid'
-                        type='primary'
+                        theme='solid' type='primary'
                         onClick={handleAddEmail}
                       >
                         {t('添加')}

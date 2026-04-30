@@ -81,7 +81,7 @@ const ModelsTabs = ({
       className='mb-2'
       tabBarExtraContent={
         <Button
-          type='primary'
+          theme='solid' type='primary'
           size='small'
           onClick={() => setShowAddVendor(true)}
         >
