@@ -131,11 +131,11 @@ const ExternalUserSource = () => {
       key: 'actions',
       render: (text, record) => (
         <Space>
-          <Button icon={<IconLink />} size="small" onClick={() => handleTest(record.id)}>Test</Button>
-          <Button icon={<IconRefresh />} size="small" onClick={() => handleSync(record.id)}>Sync</Button>
-          <Button icon={<IconSetting />} size="small" onClick={() => handleMapping(record)}>Mapping</Button>
-          <Button icon={<IconHistory />} size="small" onClick={() => handleLog(record)}>Logs</Button>
-          <Button icon={<IconEdit />} size="small" onClick={() => handleEdit(record)}>Edit</Button>
+          <Button icon={<IconLink />} size="small" type="tertiary" onClick={() => handleTest(record.id)}>Test</Button>
+          <Button icon={<IconRefresh />} size="small" type="primary" onClick={() => handleSync(record.id)}>Sync</Button>
+          <Button icon={<IconSetting />} size="small" type="tertiary" onClick={() => handleMapping(record)}>Mapping</Button>
+          <Button icon={<IconHistory />} size="small" type="tertiary" onClick={() => handleLog(record)}>Logs</Button>
+          <Button icon={<IconEdit />} size="small" type="warning" onClick={() => handleEdit(record)}>Edit</Button>
           <Popconfirm title="Delete this source?" onConfirm={() => handleDelete(record.id)}>
             <Button icon={<IconDelete />} size="small" type="danger">Delete</Button>
           </Popconfirm>
