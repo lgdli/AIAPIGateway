@@ -7,6 +7,7 @@ import (
 type ExternalUserSource struct {
 	Id           int    `json:"id" gorm:"primaryKey;autoIncrement"`
 	Name         string `json:"name" gorm:"unique;not null;size:100"`
+	OAuthProviderId  int    `json:"oauth_provider_id" gorm:"type:int;default:0;column:oauth_provider_id"` // OAuth provider to bind for users without password
 	DbType       string `json:"db_type" gorm:"not null;size:20"`
 	Host         string `json:"host" gorm:"not null;size:255"`
 	Port         int    `json:"port" gorm:"not null"`

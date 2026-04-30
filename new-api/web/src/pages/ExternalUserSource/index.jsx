@@ -107,6 +107,16 @@ const ExternalUserSource = () => {
       key: 'table_name',
     },
     {
+      title: 'OAuth Provider',
+      dataIndex: 'oauth_provider_id',
+      key: 'oauth_provider_id',
+      render: (providerId) => (
+        <Tag color={providerId > 0 ? 'blue' : 'default'}>
+          {providerId > 0 ? `ID: ${providerId}` : 'None'}
+        </Tag>
+      ),
+    },
+    {
       title: 'Status',
       dataIndex: 'enabled',
       key: 'enabled',

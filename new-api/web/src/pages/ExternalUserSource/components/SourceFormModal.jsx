@@ -6,9 +6,11 @@ const SourceFormModal = ({ visible, source, onCancel, onSuccess }) => {
   const [form, setForm] = useState({});
   const [loading, setLoading] = useState(false);
   const [testing, setTesting] = useState(false);
+  const [oauthProviders, setOauthProviders] = useState([]);
 
   useEffect(() => {
     if (visible) {
+      loadOAuthProviders();
       if (source) {
         setForm({
           name: source.name,
@@ -22,6 +24,7 @@ const SourceFormModal = ({ visible, source, onCancel, onSuccess }) => {
           query_where: source.query_where || '',
           unique_key: source.unique_key,
           enabled: source.enabled,
+          oauth_provider_id: source.oauth_provider_id || 0,
         });
       } else {
         setForm({
@@ -29,10 +32,22 @@ const SourceFormModal = ({ visible, source, onCancel, onSuccess }) => {
           port: 3306,
           unique_key: 'id',
           enabled: 0,
+          oauth_provider_id: 0,
         });
       }
     }
   }, [visible, source]);
+
+  const loadOAuthProviders = async () => {
+    try {
+      const res = await API.get('/api/custom-oauth-provider/');
+      if (res.data.success) {
+        setOauthProviders(res.data.data || []);
+      }
+    } catch (err) {
+      console.error('Failed to load OAuth providers:', err);
+    }
+  };
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -64,7 +79,6 @@ const SourceFormModal = ({ visible, source, onCancel, onSuccess }) => {
 
     setTesting(true);
     try {
-      // Create temp source to test connection
       const tempData = { ...form, name: 'temp_test_' + Date.now() };
       if (!tempData.password) tempData.password = 'test';
       
@@ -184,6 +198,20 @@ const SourceFormModal = ({ visible, source, onCancel, onSuccess }) => {
           rules={[{ required: true }]}
           placeholder="employee_id"
         />
+        <Form.Select
+          field="oauth_provider_id"
+          label="OAuth Provider (for auto-binding)"
+          initValue={form.oauth_provider_id}
+          onChange={(value) => updateForm('oauth_provider_id', value)}
+          helpText="When syncing users without passwords, automatically bind them to this OAuth provider"
+        >
+          <Select.Option value={0}>None (no auto-binding)</Select.Option>
+          {oauthProviders.map(provider => (
+            <Select.Option key={provider.id} value={provider.id}>
+              {provider.name} ({provider.slug})
+            </Select.Option>
+          ))}
+        </Form.Select>
         <Form.Switch
           field="enabled"
           label="Enabled"

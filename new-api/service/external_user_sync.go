@@ -315,6 +315,11 @@ func SyncUsers(source *model.ExternalUserSource) (*model.ExternalUserSyncLog, er
 				continue
 			}
 			UpdateUserFromExternal(localUser, extUser, mappings)
+			
+			// 如果用户密码为空且配置了 OAuth 提供商，确保绑定关系存在
+			if source.OAuthProviderId > 0 {
+				ensureOAuthBinding(localUser.Id, source.OAuthProviderId, username)
+			}
 			log.Updated++
 		} else {
 			user := TransformUser(extUser, mappings)
@@ -325,6 +330,15 @@ func SyncUsers(source *model.ExternalUserSource) (*model.ExternalUserSyncLog, er
 				log.Errors++
 			} else {
 				log.Inserted++
+				
+				// 创建 OAuth 绑定关系
+				if source.OAuthProviderId > 0 {
+					if err := createOAuthBinding(user.Id, source.OAuthProviderId, username); err != nil {
+						common.SysLog(fmt.Sprintf("Failed to create OAuth binding for user %s: %v", username, err))
+					} else {
+						common.SysLog(fmt.Sprintf("Created OAuth binding for user %s with provider %d", username, source.OAuthProviderId))
+					}
+				}
 			}
 		}
 	}
@@ -390,4 +404,26 @@ func DisableOrphanUsers(sourceId int, activeUsernames []string) (int, error) {
 		Update("status", 2)
 
 	return int(result.RowsAffected), result.Error
+}
+
+// ensureOAuthBinding 确保 OAuth 绑定关系存在
+func ensureOAuthBinding(userId, providerId int, providerUserId string) {
+	_, err := model.GetUserOAuthBinding(userId, providerId)
+	if err == nil {
+		return
+	}
+	
+	if err := createOAuthBinding(userId, providerId, providerUserId); err != nil {
+		common.SysLog(fmt.Sprintf("[OAuthBinding] Failed to create binding: %v", err))
+	}
+}
+
+// createOAuthBinding 创建 OAuth 绑定关系
+func createOAuthBinding(userId, providerId int, providerUserId string) error {
+	binding := &model.UserOAuthBinding{
+		UserId:         userId,
+		ProviderId:     providerId,
+		ProviderUserId: providerUserId,
+	}
+	return model.CreateUserOAuthBinding(binding)
 }
