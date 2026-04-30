@@ -158,7 +158,7 @@ const ViewDetailsModal = ({ visible, onCancel, deployment, t }) => {
           >
             {t('刷新')}
           </Button>
-          <Button onClick={onCancel}>{t('关闭')}</Button>
+          <Button type="tertiary" onClick={onCancel}>{t('关闭')}</Button>
         </div>
       }
       width={800}

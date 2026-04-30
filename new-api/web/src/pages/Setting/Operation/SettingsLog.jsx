@@ -249,7 +249,7 @@ export default function SettingsLog(props) {
             </Row>
 
             <Row>
-              <Button size='default' onClick={onSubmit}>
+              <Button type='primary' size='default' onClick={onSubmit}>
                 {t('保存日志设置')}
               </Button>
             </Row>

@@ -35,7 +35,7 @@ function TaskEditModal({ visible, task, onClose }) {
         <Form.InputNumber field="timeout_seconds" label="Timeout (seconds)" min={10} max={3600} />
       </Form>
       <div style={{ textAlign: 'right', marginTop: 20 }}>
-        <Button onClick={onClose} style={{ marginRight: 8 }}>Cancel</Button>
+        <Button type="tertiary" onClick={onClose} style={{ marginRight: 8 }}>Cancel</Button>
         <Button type="primary" onClick={handleSubmit} loading={loading}>Save</Button>
       </div>
     </Modal>

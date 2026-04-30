@@ -405,7 +405,7 @@ export default function GeneralSettings(props) {
               </Col>
             </Row>
             <Row>
-              <Button size='default' onClick={onSubmit}>
+              <Button type='primary' size='default' onClick={onSubmit}>
                 {t('保存通用设置')}
               </Button>
             </Row>

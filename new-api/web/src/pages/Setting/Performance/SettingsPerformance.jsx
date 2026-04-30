@@ -390,7 +390,7 @@ export default function SettingsPerformance(props) {
               </Col>
             </Row>
             <Row>
-              <Button size='default' onClick={onSubmit}>
+              <Button type='primary' size='default' onClick={onSubmit}>
                 {t('保存性能设置')}
               </Button>
             </Row>

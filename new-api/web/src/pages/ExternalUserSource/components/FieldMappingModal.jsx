@@ -208,8 +208,8 @@ const FieldMappingModal = ({ visible, source, onCancel, onSuccess }) => {
       style={{ width: 900 }}
       footer={
         <Space>
-          <Button onClick={handleAdd} icon={<IconPlus />}>Add</Button>
-          <Button onClick={onCancel}>Cancel</Button>
+          <Button type="primary" onClick={handleAdd} icon={<IconPlus />}>Add</Button>
+          <Button type="tertiary" onClick={onCancel}>Cancel</Button>
           <Button type="primary" onClick={handleSave} loading={saving}>Save</Button>
         </Space>
       }

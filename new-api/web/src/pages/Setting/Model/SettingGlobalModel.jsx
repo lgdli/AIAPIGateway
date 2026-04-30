@@ -404,7 +404,7 @@ export default function SettingGlobalModel(props) {
             </Form.Section>
 
             <Row>
-              <Button size='default' onClick={onSubmit}>
+              <Button type='primary' size='default' onClick={onSubmit}>
                 {t('保存')}
               </Button>
             </Row>

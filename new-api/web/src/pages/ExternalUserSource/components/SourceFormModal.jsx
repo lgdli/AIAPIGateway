@@ -109,8 +109,8 @@ const SourceFormModal = ({ visible, source, onCancel, onSuccess }) => {
       onCancel={onCancel}
       footer={
         <Space>
-          <Button onClick={handleTest} loading={testing}>Test Connection</Button>
-          <Button onClick={onCancel}>Cancel</Button>
+          <Button type="tertiary" onClick={handleTest} loading={testing}>Test Connection</Button>
+          <Button type="tertiary" onClick={onCancel}>Cancel</Button>
           <Button type="primary" onClick={handleSubmit} loading={loading}>Save</Button>
         </Space>
       }

@@ -83,9 +83,9 @@ function TaskSetting() {
       key: 'actions',
       render: (text, record) => (
         <div>
-          <Button icon={<IconRefresh />} onClick={() => handleTrigger(record)} size="small" style={{marginRight: 4}}>Run</Button>
-          <Button icon={<IconEdit />} onClick={() => handleEdit(record)} size="small" style={{marginRight: 4}}>Edit</Button>
-          <Button icon={<IconHistory />} onClick={() => handleHistory(record)} size="small">History</Button>
+          <Button icon={<IconRefresh />} type="primary" onClick={() => handleTrigger(record)} size="small" style={{marginRight: 4}}>Run</Button>
+          <Button icon={<IconEdit />} type="warning" onClick={() => handleEdit(record)} size="small" style={{marginRight: 4}}>Edit</Button>
+          <Button icon={<IconHistory />} type="tertiary" onClick={() => handleHistory(record)} size="small">History</Button>
         </div>
       )
     }

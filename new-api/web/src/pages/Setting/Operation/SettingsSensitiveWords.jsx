@@ -145,7 +145,7 @@ export default function SettingsSensitiveWords(props) {
               </Col>
             </Row>
             <Row>
-              <Button size='default' onClick={onSubmit}>
+              <Button type='primary' size='default' onClick={onSubmit}>
                 {t('保存屏蔽词过滤设置')}
               </Button>
             </Row>

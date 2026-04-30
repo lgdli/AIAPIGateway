@@ -95,7 +95,7 @@ const ContentModal = ({
             >
               {t('在新标签页中打开')}
             </Button>
-            <Button icon={<IconCopy />} onClick={handleCopyUrl}>
+            <Button type="tertiary" icon={<IconCopy />} onClick={handleCopyUrl}>
               {t('复制链接')}
             </Button>
           </div>

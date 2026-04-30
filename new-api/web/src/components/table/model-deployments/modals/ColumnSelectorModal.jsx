@@ -86,7 +86,7 @@ const ColumnSelectorModal = ({
       footer={
         <div className='flex justify-end gap-2'>
           <Button onClick={handleReset}>{t('重置')}</Button>
-          <Button onClick={onCancel}>{t('取消')}</Button>
+          <Button type="tertiary" onClick={onCancel}>{t('取消')}</Button>
           <Button type='primary' onClick={handleConfirm}>
             {t('确定')}
           </Button>

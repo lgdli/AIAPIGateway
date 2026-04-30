@@ -1018,7 +1018,7 @@ export default function SettingsChannelAffinity(props) {
               <Button onClick={appendCodexAndClaudeCodeTemplates}>
                 {t('填充 Codex CLI / Claude CLI 模版')}
               </Button>
-              <Button icon={<IconPlus />} onClick={openAddModal}>
+              <Button type="primary" icon={<IconPlus />} onClick={openAddModal}>
                 {t('新增规则')}
               </Button>
               <Button theme='solid' onClick={onSubmit}>
@@ -1310,7 +1310,7 @@ export default function SettingsChannelAffinity(props) {
           <Divider style={{ marginTop: 12, marginBottom: 12 }} />
           <Space style={{ marginBottom: 10 }}>
             <Text>{t('Key 来源')}</Text>
-            <Button icon={<IconPlus />} onClick={addKeySource}>
+            <Button type="primary" icon={<IconPlus />} onClick={addKeySource}>
               {t('新增 Key 来源')}
             </Button>
           </Space>

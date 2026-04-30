@@ -230,7 +230,7 @@ export default function RequestRateLimit(props) {
               </Col>
             </Row>
             <Row>
-              <Button size='default' onClick={onSubmit}>
+              <Button type='primary' size='default' onClick={onSubmit}>
                 {t('保存模型速率限制')}
               </Button>
             </Row>

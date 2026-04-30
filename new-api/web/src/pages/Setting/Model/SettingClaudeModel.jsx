@@ -238,7 +238,7 @@ export default function SettingClaudeModel(props) {
             </Row>
 
             <Row>
-              <Button size='default' onClick={onSubmit}>
+              <Button type='primary' size='default' onClick={onSubmit}>
                 {t('保存')}
               </Button>
             </Row>

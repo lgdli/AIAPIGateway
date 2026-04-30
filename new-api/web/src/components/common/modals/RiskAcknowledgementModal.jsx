@@ -121,7 +121,7 @@ const RiskAcknowledgementModal = React.memo(function RiskAcknowledgementModal({
       }}
       footer={
         <Space>
-          <Button onClick={onCancel}>{cancelText}</Button>
+          <Button type="tertiary" onClick={onCancel}>{cancelText}</Button>
           <Button
             theme='solid'
             type='danger'
