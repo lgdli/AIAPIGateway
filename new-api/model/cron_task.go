@@ -104,6 +104,14 @@ func InsertDefaultCronTasks() error {
 			Enabled:        false,
 			TimeoutSeconds: 60,
 		},
+		{
+			Name:           "external_user_sync",
+			DisplayName:    "External User Sync",
+			Description:    "Sync users from external user sources",
+			CronExpression: "0 */6 * * *",
+			Enabled:        false,
+			TimeoutSeconds: 600,
+		},
 	}
 
 	for _, task := range defaultTasks {
